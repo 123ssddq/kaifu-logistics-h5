@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<title>开福区物流企业资质申报指南</title>
+<style>
+:root{
+  --ink:#0d2b4e;
+  --ink-2:#173d66;
+  --gold:#c9a227;
+  --gold-soft:#e3c766;
+  --paper:#f7f5f0;
+  --line:rgba(13,43,78,.10);
+  --muted:#6b7c90;
+  --white:#fff;
+  --shadow:0 8px 30px rgba(13,43,78,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+  background:var(--paper);color:var(--ink);
+  line-height:1.75;font-size:16px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* ============ 封面 ============ */
+.cover{
+  position:relative;min-height:100vh;min-height:100svh;
+  background:
+    radial-gradient(120% 80% at 85% 8%, rgba(201,162,39,.22) 0%, rgba(201,162,39,0) 55%),
+    radial-gradient(100% 70% at 10% 95%, rgba(67,124,190,.30) 0%, rgba(67,124,190,0) 60%),
+    linear-gradient(160deg,#0a2340 0%,#0d2b4e 45%,#14395f 100%);
+  color:#fff;display:flex;flex-direction:column;
+  padding:calc(env(safe-area-inset-top) + 44px) 26px calc(env(safe-area-inset-bottom) + 40px);
+  overflow:hidden;
+}
+/* 细网格纹理 */
+.cover::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:36px 36px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,transparent 85%);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.9) 0%,transparent 85%);
+}
+/* 装饰光环 */
+.cover::after{
+  content:"";position:absolute;width:520px;height:520px;border-radius:50%;
+  right:-230px;top:-160px;pointer-events:none;
+  border:1px solid rgba(201,162,39,.28);
+  box-shadow:0 0 0 46px rgba(201,162,39,.055),0 0 0 92px rgba(201,162,39,.03);
+}
+.cover-top{position:relative;z-index:2;display:flex;align-items:center;gap:10px;margin-bottom:auto}
+.seal{
+  width:34px;height:34px;border:1.5px solid var(--gold);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+  font-size:13px;font-weight:700;color:var(--gold);letter-spacing:-.5px;
+}
+.cover-org{font-size:12.5px;letter-spacing:.14em;color:rgba(255,255,255,.72);line-height:1.4}
+.cover-org b{display:block;color:#fff;font-weight:600;letter-spacing:.06em;font-size:13.5px}
+
+.cover-main{position:relative;z-index:2;margin:auto 0}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:.22em;color:var(--gold-soft);
+  border:1px solid rgba(201,162,39,.45);border-radius:2px;
+  padding:5px 12px;margin-bottom:26px;font-weight:500;
+}
+.eyebrow i{width:4px;height:4px;background:var(--gold);border-radius:50%;display:block}
+.cover h1{
+  font-size:clamp(34px,10.2vw,50px);line-height:1.24;font-weight:800;
+  letter-spacing:.01em;margin-bottom:18px;
+  text-shadow:0 2px 24px rgba(0,0,0,.18);
+}
+.cover h1 em{font-style:normal;color:var(--gold-soft);display:block}
+.cover-desc{
+  font-size:14.5px;color:rgba(255,255,255,.66);letter-spacing:.05em;
+  max-width:20em;line-height:1.9;border-left:2px solid var(--gold);
+  padding-left:14px;margin-top:6px;
+}
+.cover-foot{
+  position:relative;z-index:2;margin-top:auto;padding-top:44px;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+}
+.cover-foot .who{font-size:12.5px;color:rgba(255,255,255,.5);letter-spacing:.1em;line-height:1.7}
+.cover-foot .who b{display:block;color:rgba(255,255,255,.88);font-weight:500;font-size:13.5px;letter-spacing:.04em}
+.scroll-hint{
+  display:flex;flex-direction:column;align-items:center;gap:7px;
+  font-size:10.5px;letter-spacing:.2em;color:rgba(255,255,255,.42);flex:0 0 auto;
+}
+.scroll-hint span{
+  width:1px;height:34px;display:block;
+  background:linear-gradient(180deg,rgba(201,162,39,.9),rgba(201,162,39,0));
+  animation:drop 2s ease-in-out infinite;
+}
+@keyframes drop{0%,100%{opacity:.25;transform:scaleY(.55);transform-origin:top}50%{opacity:1;transform:scaleY(1);transform-origin:top}}
+
+/* ============ 通用区块 ============ */
+.section{padding:64px 22px}
+.wrap{max-width:680px;margin:0 auto}
+.sec-head{margin-bottom:34px}
+.sec-num{
+  font-family:"DIN Alternate","Helvetica Neue",Arial,sans-serif;
+  font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:700;
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.sec-num::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.sec-head h2{font-size:23px;font-weight:800;letter-spacing:.01em;line-height:1.4}
+.sec-head p{font-size:13.5px;color:var(--muted);margin-top:9px;line-height:1.85;letter-spacing:.02em}
+
+/* 滚动出现 */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.16,.84,.44,1),transform .7s cubic-bezier(.16,.84,.44,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============ 导语 ============ */
+.intro{background:var(--white)}
+.lead{font-size:15.5px;line-height:2.05;color:#33475e;letter-spacing:.02em}
+.lead b{color:var(--ink);font-weight:700}
+.lead .hl{background:linear-gradient(180deg,transparent 62%,rgba(201,162,39,.32) 62%);font-weight:600;color:var(--ink)}
+
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);margin-top:34px;border:1px solid var(--line)}
+.metric{background:var(--white);padding:20px 12px;text-align:center}
+.metric .n{
+  font-family:"DIN Alternate","Helvetica Neue",Arial,sans-serif;
+  font-size:30px;font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.02em;
+  display:flex;align-items:baseline;justify-content:center;gap:2px;
+}
+.metric .n small{font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0}
+.metric .t{font-size:11.5px;color:var(--muted);margin-top:9px;letter-spacing:.08em}
+
+/* ============ 申报条件 ============ */
+.cond{background:var(--paper)}
+.cond-list{display:flex;flex-direction:column;gap:12px}
+.cond-item{
+  background:var(--white);border:1px solid var(--line);
+  padding:20px 20px 20px 18px;position:relative;
+  display:flex;gap:15px;align-items:flex-start;
+  transition:box-shadow .3s,transform .3s,border-color .3s;
+}
+.cond-item:active{transform:scale(.995)}
+.cond-item .idx{
+  flex:0 0 auto;width:30px;height:30px;
+  font-family:"DIN Alternate",Arial,sans-serif;font-size:13px;font-weight:800;
+  color:var(--white);background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  letter-spacing:0;position:relative;
+}
+.cond-item.must .idx{background:var(--gold);color:#3d2f00}
+.cond-item h3{font-size:15.5px;font-weight:700;line-height:1.55;margin-bottom:5px;letter-spacing:.01em}
+.cond-item p{font-size:13px;color:var(--muted);line-height:1.85;letter-spacing:.01em}
+.cond-item p em{font-style:normal;color:var(--ink-2);font-weight:600}
+.tag-key{
+  position:absolute;top:0;right:0;
+  font-size:10px;letter-spacing:.12em;color:#7a5c00;background:rgba(201,162,39,.18);
+  padding:3px 8px;font-weight:600;
+}
+
+/* ============ 申报流程 ============ */
+.flow{background:linear-gradient(180deg,#0a2340 0%,#0f3255 100%);color:#fff;position:relative;overflow:hidden}
+.flow::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(80% 50% at 100% 0%,rgba(201,162,39,.16),transparent 60%);
+}
+.flow .wrap{position:relative;z-index:2}
+.flow .sec-num{color:var(--gold-soft)}
+.flow .sec-num::after{background:linear-gradient(90deg,rgba(255,255,255,.16),transparent)}
+.flow .sec-head h2{color:#fff}
+.flow .sec-head p{color:rgba(255,255,255,.55)}
+.steps{position:relative;margin-top:10px}
+.steps::before{
+  content:"";position:absolute;left:15px;top:14px;bottom:26px;width:1px;
+  background:linear-gradient(180deg,rgba(201,162,39,.7),rgba(201,162,39,.12));
+}
+.step{position:relative;padding:0 0 30px 48px}
+.step:last-child{padding-bottom:0}
+.step .dot{
+  position:absolute;left:7px;top:4px;width:17px;height:17px;border-radius:50%;
+  background:#0f3255;border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+}
+.step .dot::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.step h3{font-size:16px;font-weight:700;letter-spacing:.02em;margin-bottom:7px}
+.step .meta{
+  display:inline-block;font-size:11px;letter-spacing:.08em;color:var(--gold-soft);
+  border:1px solid rgba(201,162,39,.32);padding:2px 8px;margin-bottom:9px;font-weight:500;
+}
+.step p{font-size:13.2px;color:rgba(255,255,255,.62);line-height:1.9;letter-spacing:.01em}
+
+/* ============ 材料清单 ============ */
+.docs{background:var(--white)}
+.doc-list{list-style:none;border-top:1px solid var(--line)}
+.doc-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:15px 2px;border-bottom:1px solid var(--line);
+  font-size:14px;color:#33475e;line-height:1.75;
+}
+.doc-list li .ck{
+  flex:0 0 auto;width:15px;height:15px;margin-top:5px;
+  border:1.5px solid var(--gold);position:relative;
+}
+.doc-list li .ck::after{
+  content:"";position:absolute;left:3.5px;top:1px;width:5px;height:8px;
+  border:solid var(--gold);border-width:0 1.5px 1.5px 0;transform:rotate(45deg);
+}
+.doc-list li b{font-weight:600;color:var(--ink)}
+
+/* ============ 注意事项 ============ */
+.notes{background:var(--paper)}
+.note{
+  background:var(--white);border-left:3px solid var(--gold);
+  padding:16px 18px;margin-bottom:11px;
+  font-size:13.5px;color:#33475e;line-height:1.9;
+}
+.note b{color:var(--ink);font-weight:700}
+.note .k{color:#a8452f;font-weight:700}
+
+/* ============ 落款 ============ */
+.end{
+  background:linear-gradient(180deg,#0f3255 0%,#0a2340 100%);
+  color:#fff;text-align:center;padding:64px 26px calc(env(safe-area-inset-bottom) + 52px);
+  position:relative;overflow:hidden;
+}
+.end::before{
+  content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+  left:50%;bottom:-300px;transform:translateX(-50%);
+  border:1px solid rgba(201,162,39,.22);
+  box-shadow:0 0 0 40px rgba(201,162,39,.045);
+}
+.end .wrap{position:relative;z-index:2}
+.end .seal{margin:0 auto 20px;width:44px;height:44px;font-size:15px}
+.end h3{font-size:17px;font-weight:700;letter-spacing:.06em;margin-bottom:8px}
+.end .sub{font-size:12.5px;color:rgba(255,255,255,.5);letter-spacing:.12em;line-height:1.9}
+.end .rule{width:36px;height:1px;background:var(--gold);margin:22px auto;opacity:.7}
+.end .tip{font-size:11.5px;color:rgba(255,255,255,.34);letter-spacing:.06em;line-height:1.9}
+
+/* 分隔细线 */
+.hair{height:1px;background:var(--line);max-width:680px;margin:0 auto}
+</style>
+</head>
+<body>
+
+<!-- ================= 封面 ================= -->
+<header class="cover">
+  <div class="cover-top">
+    <div class="seal">开</div>
+    <div class="cover-org">
+      <b>长沙市开福区物流与口岸服务中心</b>
+      政策指南 · 2026
+    </div>
+  </div>
+
+  <div class="cover-main">
+    <div class="eyebrow"><i></i>企 业 办 事 指 引</div>
+    <h1>开福区物流企业<em>资质申报指南</em></h1>
+    <div class="cover-desc">
+      网络货运（无车承运人）平台资质<br>
+      条件 · 流程 · 材料 · 注意事项
+    </div>
+  </div>
+
+  <div class="cover-foot">
+    <div class="who">
+      出品
+      <b>长沙市开福区物流与口岸服务中心</b>
+    </div>
+    <div class="scroll-hint">
+      下滑阅读
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= 导语 ================= -->
+<section class="section intro">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">01 / 导读</div>
+      <h2>这份指南解决什么问题</h2>
+    </div>
+    <p class="lead reveal">
+      网络货运经营，指经营者依托互联网平台整合配置运输资源，以承运人身份与托运人签订运输合同、承担承运人责任的道路货物运输经营活动。
+      网络平台是这项经营的<span class="hl">直接载体</span>，线上服务能力认定，认定的就是这个平台的能力。
+    </p>
+    <p class="lead reveal" style="margin-top:18px">
+      本指南把申报拆成 <b>四项条件</b>、<b>五步流程</b>，并附材料清单与常见退回原因，
+      供区内物流企业对照准备，减少往返。
+    </p>
+
+    <div class="metrics reveal">
+      <div class="metric">
+        <div class="n" data-count="8">0</div>
+        <div class="t">申报条件</div>
+      </div>
+      <div class="metric">
+        <div class="n" data-count="5">0</div>
+        <div class="t">办理步骤</div>
+      </div>
+      <div class="metric">
+        <div class="n" data-count="80"><small>单</small></div>
+        <div class="t">测试单据上限</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 申报条件 ================= -->
+<section class="section cond">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">02 / 申报条件</div>
+      <h2>八项条件，逐条对照</h2>
+      <p>标「核心」的三项为认定环节的重点核查内容，建议优先落实。</p>
+    </div>
+
+    <div class="cond-list">
+      <article class="cond-item reveal">
+        <div class="idx">01</div>
+        <div>
+          <h3>企业需在开福区注册</h3>
+          <p>营业执照登记机关为开福区市场监管部门，且经营状态正常。</p>
+        </div>
+      </article>
+
+      <article class="cond-item must reveal">
+        <div class="tag-key">核心</div>
+        <div class="idx">02</div>
+        <div>
+          <h3>缴纳社保，办理增值电信业务许可证</h3>
+          <p>需提供在册人员<em>社保缴纳记录</em>，并取得<em>增值电信业务经营许可证（ICP）</em>。</p>
+        </div>
+      </article>
+
+      <article class="cond-item must reveal">
+        <div class="tag-key">核心</div>
+        <div class="idx">03</div>
+        <div>
+          <h3>办理三级信息安全等级保护备案</h3>
+          <p>平台系统需完成<em>等保三级</em>备案，取得备案证明。</p>
+        </div>
+      </article>
+
+      <article class="cond-item reveal">
+        <div class="idx">04</div>
+        <div>
+          <h3>建立企业独立的 SaaS 服务系统</h3>
+          <p>即《指南》所规定的网络货运平台，需为企业自有、可独立运行的系统，而非共用账号。</p>
+        </div>
+      </article>
+
+      <article class="cond-item must reveal">
+        <div class="tag-key">核心</div>
+        <div class="idx">05</div>
+        <div>
+          <h3>接入湖南省网络货运信息监测系统</h3>
+          <p>平台须完成与省级监测系统的对接，<em>按接口规范真实上传运单数据</em>。</p>
+        </div>
+      </article>
+
+      <article class="cond-item reveal">
+        <div class="idx">06</div>
+        <div>
+          <h3>对接交通运输主管部门与税务系统</h3>
+          <p>按政策要求上传货运全过程的<em>运单数据、车辆轨迹</em>等真实信息，不得伪造或补录。</p>
+        </div>
+      </article>
+
+      <article class="cond-item reveal">
+        <div class="idx">07</div>
+        <div>
+          <h3>建立平台安全风险管控制度</h3>
+          <p>含安全生产管理制度、应急管理预案、安全人员考核办法、信息安全管理制度等。</p>
+        </div>
+      </article>
+
+      <article class="cond-item reveal">
+        <div class="idx">08</div>
+        <div>
+          <h3>营业执照新增「网络货运」经营范围</h3>
+          <p>在现有执照上增项，经营范围表述以市场监管部门口径为准。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 申报流程 ================= -->
+<section class="section flow">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03 / 申报流程</div>
+      <h2>五步走完，省级认定</h2>
+      <p>县级交通运输主管部门提交，省级主管部门线上服务能力认定，认定合格后出具结果或官网公示。</p>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <div class="dot"></div>
+        <div class="meta">STEP 01</div>
+        <h3>主体与资质准备</h3>
+        <p>开福区注册、社保缴纳、增值电信业务许可证、等保三级备案、执照增项。这一阶段耗时最长，建议并行推进。</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="dot"></div>
+        <div class="meta">STEP 02</div>
+        <h3>平台搭建与系统对接</h3>
+        <p>建设企业独立的 SaaS 服务系统，完成与湖南省网络货运信息监测系统、交通运输主管部门监测系统及税务系统的接口对接。</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="dot"></div>
+        <div class="meta">STEP 03</div>
+        <h3>提供测试环境</h3>
+        <p>提交企业测试系统域名地址及对应 IP 地址，按接口规范上传测试单据，每类单据总数不得超过 80 单。</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="dot"></div>
+        <div class="meta">STEP 04</div>
+        <h3>提交申报材料</h3>
+        <p>向县级交通运输主管部门提交全套材料，由其上报省级交通运输主管部门。</p>
+      </div>
+
+      <div class="step reveal">
+        <div class="dot"></div>
+        <div class="meta">STEP 05</div>
+        <h3>线上服务能力认定</h3>
+        <p>省级主管部门对申请者相关信息开展线上服务能力认定。认定合格的，开具认定结果或在省级主管部门官网公示。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 材料清单 ================= -->
+<section class="section docs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">04 / 材料清单</div>
+      <h2>提交前逐项打勾</h2>
+      <p>以下为常规清单，具体以受理窗口当期要求为准。</p>
+    </div>
+
+    <ul class="doc-list">
+      <li class="reveal"><span class="ck"></span><span><b>营业执照</b>副本复印件，经营范围含「网络货运」</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>增值电信业务经营许可证</b>（ICP）复印件</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>等保三级备案证明</b></span></li>
+      <li class="reveal"><span class="ck"></span><span><b>社保缴纳证明</b>（在册人员）</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>平台系统说明</b>：架构、功能模块、服务器部署情况</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>测试环境信息</b>：域名、IP 地址、接口对接凭证</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>安全生产管理制度</b>及应急预案</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>信息安全管理制度</b>、安全人员考核记录</span></li>
+      <li class="reveal"><span class="ck"></span><span><b>线上服务能力认定申请表</b>（按当期模板填写）</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 注意事项 ================= -->
+<section class="section notes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">05 / 注意事项</div>
+      <h2>这几条最容易出问题</h2>
+    </div>
+
+    <div class="note reveal">
+      <b>测试单据限量。</b>为保证测试系统运行效率、避免随意上传垃圾数据，每类单据上传总数<span class="k">不得超过 80 单</span>。
+    </div>
+    <div class="note reveal">
+      <b>恶意上传会被封禁。</b>如发现企业恶意大量上传数据，将<span class="k">对该企业上传端口进行封禁</span>，且不得通过网络货运线上服务能力认定。
+    </div>
+    <div class="note reveal">
+      <b>数据必须真实。</b>运单、车辆轨迹等需为货运全过程真实信息，补录、伪造数据在认定环节会被核查。
+    </div>
+    <div class="note reveal">
+      <b>系统必须自有。</b>共用账号、租用他人平台界面，不满足「企业独立 SaaS 服务系统」的要求。
+    </div>
+  </div>
+</section>
+
+<!-- ================= 落款 ================= -->
+<footer class="end">
+  <div class="wrap">
+    <div class="seal">开</div>
+    <h3>长沙市开福区物流与口岸服务中心</h3>
+    <div class="sub">出品</div>
+    <div class="rule"></div>
+    <div class="tip">
+      本指南依据现行管理办法及申报要求整理<br>
+      具体办理以受理部门当期口径为准
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- 滚动出现 ---- */
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || reduce) {
+    for (var i=0;i<items.length;i++) items[i].classList.add('in');
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          var el = e.target;
+          var sibs = Array.prototype.slice.call(el.parentNode.children).indexOf(el);
+          el.style.transitionDelay = Math.min(sibs, 6) * 55 + 'ms';
+          el.classList.add('in');
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    for (var j=0;j<items.length;j++) io.observe(items[j]);
+  }
+
+  /* ---- 数字滚动 ---- */
+  function countUp(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var small = el.querySelector('small');
+    if (reduce) { el.textContent = target; if (small) el.appendChild(small); return; }
+    var start = null, dur = 1100;
+    function tick(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var v = Math.round(target * eased);
+      el.textContent = v;
+      if (small) el.appendChild(small);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  var metrics = document.querySelectorAll('.metric .n');
+  if (!('IntersectionObserver' in window)) {
+    metrics.forEach(countUp);
+  } else {
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { countUp(e.target); io2.unobserve(e.target); }
+      });
+    }, { threshold: 0.6 });
+    metrics.forEach(function(m){ io2.observe(m); });
+  }
+})();
+</script>
+</body>
+</html>
